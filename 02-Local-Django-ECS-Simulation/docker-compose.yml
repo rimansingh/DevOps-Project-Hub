@@ -1,0 +1,7 @@
+version: '3'
+services:
+  django-app:
+    image: hello-world-django-app:version1
+    ports:
+      - "8000:8000"
+    container_name: django_local_app
