@@ -1,0 +1,11 @@
+# inventory.yml
+[master]
+master ansible_host=<master-ip> ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/your-key.pem
+
+[slaves]
+slave1 ansible_host=<slave1-ip> ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/your-key.pem
+slave2 ansible_host=<slave2-ip> ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/your-key.pem
+slave3 ansible_host=<slave3-ip> ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/your-key.pem
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

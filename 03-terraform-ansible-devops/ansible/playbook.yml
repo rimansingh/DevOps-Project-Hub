@@ -1,0 +1,21 @@
+---
+- name: Configure Slave1
+  hosts: slave1
+  become: yes
+  roles:
+    - java
+    - python
+
+- name: Configure Slave2
+  hosts: slave2
+  become: yes
+  roles:
+    - java
+    - mysql
+
+- name: Configure Slave3
+  hosts: slave3
+  become: yes
+  roles:
+    - mysql
+    - python
