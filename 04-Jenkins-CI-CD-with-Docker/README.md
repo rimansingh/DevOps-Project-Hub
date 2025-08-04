@@ -64,17 +64,17 @@ This project implements a complete CI/CD pipeline using Jenkins and Docker for a
 ## Implementation Screenshots
 
 1. **Jenkins Setup**
-   - [Jenkins Agents Configuration](./screenshots/01-jenkins-agents-setup.png)
-   - [Pipeline Configuration](./screenshots/02-jenkins-pipeline-config.png)
+   - ![Jenkins Agents Configuration](./screenshots/01-jenkins-agents-setup.png)
+- ![Pipeline Configuration](./screenshots/02-jenkins-pipeline-config.png)
 
 2. **Build Process**
-   - [Build Logs](./screenshots/03-build-logs.png)
-   - [Deployment Logs](./screenshots/04-deployment-logs.png)
-   - [Docker Image Build](./screenshots/05-docker-image-build.png)
+   - ![Build Logs](./screenshots/03-build-logs.png)
+- ![Deployment Logs](./screenshots/04-deployment-logs.png)
+- ![Docker Image Build](./screenshots/05-docker-image-build.png)
 
 3. **Deployment**
-   - [Web Application Running](./screenshots/06-webapp-running.png)
-   - [Deployed Application](./screenshots/07-webapp-deployed.png)
+   - ![Web Application Running](./screenshots/06-webapp-running.png)
+- ![Deployed Application](./screenshots/07-webapp-deployed.png)
 
 ## Key Achievements
 - Implemented fully automated CI/CD pipeline
@@ -95,3 +95,92 @@ This project implements a complete CI/CD pipeline using Jenkins and Docker for a
 - Used proper Docker networking
 - Configured appropriate port mappings
 - Implemented access controls
+
+## Code Snippets
+
+### Dockerfile
+This `Dockerfile` defines how the web application's Docker image is built. It uses a lightweight Nginx base image, copies the web application files, exposes port 80, and starts the Nginx server.
+
+```dockerfile
+FROM nginx:alpine
+
+# Copy the web application files
+COPY ./webapp /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+### Jenkinsfile
+This `Jenkinsfile` defines the CI/CD pipeline for the project. It automates the cloning of the repository, building of the Docker image, and running of the Docker container.
+
+```groovy
+agent any
+
+environment {
+    REPO_URL = 'https://github.com/rimansingh/beginner-html-site-styled.git'
+    IMAGE_NAME = 'beginner-html-site'
+    CONTAINER_NAME = 'html-site-container'
+    PORT = '99'
+}
+
+stages {
+    stage('Clone Repository') {
+        steps {
+            echo 'Cloning repository from GitHub...'
+            git branch: 'gh-pages', url: "${REPO_URL}"
+        }
+    }
+
+    stage('Build Docker Image') {
+        steps {
+            echo 'Building Docker image...'
+            script {
+                sh """
+                    docker build -t ${IMAGE_NAME} .
+                """
+            }
+        }
+    }
+
+    stage('Run Docker Container') {
+        steps {
+            echo 'Running Docker container...'
+            script {
+                sh """
+                    # Stop and remove any existing container with the same name
+                    docker stop ${CONTAINER_NAME} || true
+                    docker rm ${CONTAINER_NAME} || true
+                    
+                    # Run a new container on the specified port
+                    docker run -d --name ${CONTAINER_NAME} -p ${PORT}:80 ${IMAGE_NAME}
+                """
+            }
+        }
+    }
+
+    stage('Check Container') {
+        steps {
+            echo 'Checking running containers...'
+            script {
+                sh 'docker ps'
+            }
+        }
+    }
+}
+
+post {
+    always {
+        echo "Pipeline completed."
+    }
+    success {
+        echo "Pipeline executed successfully."
+    }
+    failure {
+        echo "Pipeline failed."
+    }
+}
+```
