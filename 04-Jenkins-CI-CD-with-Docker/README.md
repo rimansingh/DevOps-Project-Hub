@@ -184,3 +184,21 @@ post {
     }
 }
 ```
+
+---
+
+## 🤝 Author
+
+**Rimandeep Singh**
+
+* 💼 DevOps | Cloud | Networking
+* 🔗 [GitHub](https://github.com/rimansingh)
+* 🌍 Based in Germany
+
+---
+
+## ⭐ Support
+
+If you find this helpful, consider giving a ⭐ on GitHub and sharing it with your network!
+
+---
