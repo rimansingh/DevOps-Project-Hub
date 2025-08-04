@@ -1,0 +1,67 @@
+pipeline {
+    agent any
+
+    environment {
+        REPO_URL = 'https://github.com/rimansingh/beginner-html-site-styled.git'
+        IMAGE_NAME = 'beginner-html-site'
+        CONTAINER_NAME = 'html-site-container'
+        PORT = '99'
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                echo 'Cloning repository from GitHub...'
+                git branch: 'gh-pages', url: "${REPO_URL}"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo 'Building Docker image...'
+                script {
+                    sh """
+                        docker build -t ${IMAGE_NAME} .
+                    """
+                }
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                echo 'Running Docker container...'
+                script {
+                    sh """
+                        # Stop and remove any existing container with the same name
+                        docker stop ${CONTAINER_NAME} || true
+                        docker rm ${CONTAINER_NAME} || true
+                        
+                        # Run a new container on the specified port
+                        docker run -d --name ${CONTAINER_NAME} -p ${PORT}:80 ${IMAGE_NAME}
+                    """
+                }
+            }
+        }
+
+        stage('Check Container') {
+            steps {
+                echo 'Checking running containers...'
+                script {
+                    sh 'docker ps'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Pipeline completed."
+        }
+        success {
+            echo "Pipeline executed successfully."
+        }
+        failure {
+            echo "Pipeline failed."
+        }
+    }
+}
