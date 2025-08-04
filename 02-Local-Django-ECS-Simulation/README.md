@@ -246,5 +246,3 @@ docker push localhost:5000/hello-world-django-app
 If you find this helpful, consider giving a ⭐ on GitHub and sharing it with your network!
 
 ---
-
----
