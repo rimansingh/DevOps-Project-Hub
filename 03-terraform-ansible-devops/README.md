@@ -64,13 +64,13 @@ ansible-playbook -i inventory.yml playbook.yml
 ## Implementation Screenshots
 
 1. **Infrastructure Setup**
-   - [Terraform Instance Creation](screenshots/01-terraform-instance-creation.png)
-   - [Ansible Node Connection](screenshots/02-ansible-node-connection.png)
+   - ![Terraform Instance Creation](screenshots/01-terraform-instance-creation.png)
+   - ![Ansible Node Connection](screenshots/02-ansible-node-connection.png)
 
 2. **Configuration Management**
-   - [Ansible Tools Installation](screenshots/03-ansible-tools-installation.png)
-   - [Ansible Host Configuration](screenshots/04-ansible-host-configuration.png)
-   - [Ansible Playbook Execution](screenshots/05-ansible-playbook-execution.png)
+   - ![Ansible Tools Installation](screenshots/03-ansible-tools-installation.png)
+   - ![Ansible Host Configuration](screenshots/04-ansible-host-configuration.png)
+   - ![Ansible Playbook Execution](screenshots/05-ansible-playbook-execution.png)
 
 ## Key Achievements
 - Successfully automated infrastructure deployment using Terraform
