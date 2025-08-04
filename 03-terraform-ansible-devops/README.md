@@ -26,7 +26,7 @@ Implemented three distinct roles:
 
 ## Project Structure
 ```
-project-1/
+03-terraform-ansible-devops/
 ├── terraform/
 │   └── main.tf          # AWS infrastructure configuration
 ├── ansible/
@@ -64,13 +64,13 @@ ansible-playbook -i inventory.yml playbook.yml
 ## Implementation Screenshots
 
 1. **Infrastructure Setup**
-   - [Terraform Instance Creation](./screenshots/01-terraform-instance-creation.png)
-   - [Ansible Node Connection](./screenshots/02-ansible-node-connection.png)
+   - [Terraform Instance Creation](screenshots/01-terraform-instance-creation.png)
+   - [Ansible Node Connection](screenshots/02-ansible-node-connection.png)
 
 2. **Configuration Management**
-   - [Ansible Tools Installation](./screenshots/03-ansible-tools-installation.png)
-   - [Ansible Host Configuration](./screenshots/04-ansible-host-configuration.png)
-   - [Ansible Playbook Execution](./screenshots/05-ansible-playbook-execution.png)
+   - [Ansible Tools Installation](screenshots/03-ansible-tools-installation.png)
+   - [Ansible Host Configuration](screenshots/04-ansible-host-configuration.png)
+   - [Ansible Playbook Execution](screenshots/05-ansible-playbook-execution.png)
 
 ## Key Achievements
 - Successfully automated infrastructure deployment using Terraform
@@ -78,3 +78,22 @@ ansible-playbook -i inventory.yml playbook.yml
 - Created reusable roles for software installation
 - Established secure communication between nodes
 - Demonstrated Infrastructure as Code principles
+
+
+---
+
+## 🤝 Author
+
+**Rimandeep Singh**
+
+* 💼 DevOps | Cloud | Networking
+* 🔗 [GitHub](https://github.com/rimansingh)
+* 🌍 Based in Germany
+
+---
+
+## ⭐ Support
+
+If you find this helpful, consider giving a ⭐ on GitHub and sharing it with your network!
+
+---
