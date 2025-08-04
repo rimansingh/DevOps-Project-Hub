@@ -323,6 +323,10 @@ The GitHub repository to be cloned:
 - Ensure all configurations are properly secured, including key management.
 - Use default VPC and Subnet to avoid loss of marks.
 
---- 
+---
 
-This README file documents all steps for successful implementation of the assignment. Let me know if you need any adjustments!
+## ⭐ Support
+
+If you find this helpful, consider giving a ⭐ on GitHub and sharing it with your network!
+
+---
