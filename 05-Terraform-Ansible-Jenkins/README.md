@@ -1,7 +1,3 @@
-Here's a **README.md** file for your assignment:
-
----
-
 # DevOps Assignment: Pipeline Creation for Website Deployment
 
 ## Objective
@@ -186,8 +182,6 @@ echo "Setup complete!"
 
 ---
 
----
-
 ### 5. Ansible Playbook
 - Write a playbook `install_java_jenkins.yml`:
   ```yaml
@@ -277,8 +271,6 @@ echo "Setup complete!"
 
 ---
 
----
-
 ### 7. Jenkins Pipeline Job
 - Create a Jenkins pipeline job using the following script:
   ```groovy
@@ -297,14 +289,6 @@ echo "Setup complete!"
 - **Screenshot:**
   ![Jenkins Pipeline](screenshots/07-jenkins-pipeline.png)
   ![Deployment Output](screenshots/08-deployment-output.png)
-
----
-
----
-
-## Repository URL
-The GitHub repository to be cloned:
-[https://github.com/mdn/beginner-html-site-styled](https://github.com/mdn/beginner-html-site-styled)
 
 ---
 
