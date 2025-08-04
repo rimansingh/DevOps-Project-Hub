@@ -20,6 +20,10 @@ This project demonstrates infrastructure automation using Terraform for AWS reso
 
 This project focuses on setting up a CI/CD pipeline using Jenkins and Docker. It demonstrates automated builds, tests, and deployments of applications.
 
+### 05-Terraform-Ansible-Jenkins
+
+This project details the creation of a comprehensive CI/CD pipeline for website deployment using Terraform for infrastructure provisioning, Ansible for configuration management, and Jenkins for automation.
+
 ## Coming Soon
 
 I am continuously working on expanding this portfolio with more exciting DevOps projects. Stay tuned for updates!
