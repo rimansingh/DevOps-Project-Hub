@@ -14,7 +14,7 @@ Create a real-world Linux environment for DevOps engineers using **Vagrant and V
 ### Host Machine
 
 - OS: Windows, macOS, or Linux
-- RAM: Minimum 4GB (recommended: 8GB)
+- RAM: Minimum 2GB (recommended: 4GB)
 - Virtualization support enabled in BIOS
 
 ### Software
