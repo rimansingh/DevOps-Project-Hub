@@ -60,7 +60,7 @@ This project simulates deploying a Django application using Docker on a **local 
    ```bash
    python3 -m venv venv
    source venv/bin/activate  # or venv\Scripts\activate on Windows
-````
+   ````
 
 2. Install Django:
 
@@ -236,7 +236,7 @@ docker push localhost:5000/hello-world-django-app
 **Rimandeep Singh**
 
 * 💼 DevOps | Cloud | Networking
-* 🔗 [GitHub](https://github.com/RimandeepSingh)
+* 🔗 [GitHub](https://github.com/rimansingh)
 * 🌍 Based in Germany
 
 ---
@@ -247,15 +247,4 @@ If you find this helpful, consider giving a ⭐ on GitHub and sharing it with yo
 
 ---
 
-```
-
 ---
-
-Let me know if you'd like:
-
-- A `docker-compose.yml` file for easier orchestration
-- A second README to put inside the Django app folder
-- A shell script to automate this whole setup
-
-Ready when you are.
-```
