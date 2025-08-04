@@ -1,0 +1,63 @@
+---
+- name: Setup Jenkins Master
+  hosts: jenkins_master
+  become: yes
+  tasks:
+    - name: Install Java
+      apt:
+        name: default-jdk
+        state: present
+        update_cache: yes
+
+    - name: Add Jenkins Repository Key
+      apt_key:
+        url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+        state: present
+
+    - name: Add Jenkins Repository
+      apt_repository:
+        repo: deb https://pkg.jenkins.io/debian-stable binary/
+        state: present
+
+    - name: Install Jenkins
+      apt:
+        name: jenkins
+        state: present
+        update_cache: yes
+      notify: restart jenkins
+
+    - name: Start Jenkins Service
+      service:
+        name: jenkins
+        state: started
+        enabled: yes
+
+- name: Setup Jenkins Slaves
+  hosts: jenkins_slaves
+  become: yes
+  tasks:
+    - name: Install Java
+      apt:
+        name: default-jdk
+        state: present
+        update_cache: yes
+
+    - name: Create Jenkins User
+      user:
+        name: jenkins
+        shell: /bin/bash
+        home: /home/jenkins
+
+    - name: Create SSH Directory
+      file:
+        path: /home/jenkins/.ssh
+        state: directory
+        owner: jenkins
+        group: jenkins
+        mode: '0700'
+
+  handlers:
+    - name: restart jenkins
+      service:
+        name: jenkins
+        state: restarted
