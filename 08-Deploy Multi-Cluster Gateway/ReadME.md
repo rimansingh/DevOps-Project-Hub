@@ -49,7 +49,7 @@ _(A simple diagram illustrating the concept)_
 
 ---
 
-![Task 1: Deploy Clusters](Task 1. Deploy clusters.png)
+![Task 1: Deploy Clusters](<./Task 1. Deploy clusters.png>)
 
 ### **Phase 1: Environment Setup & GKE Enterprise Enablement**
 
@@ -142,7 +142,7 @@ Three GKE clusters are provisioned across two regions. Placeholders like `[PROJE
 
 ---
 
-![Task 3: Enable Multi-cluster Services (MCS)](Task 3. Enable Multi-cluster Services (MCS).png)
+![Task 3: Enable Multi-cluster Services (MCS)](<./Task 3. Enable Multi-cluster Services (MCS).png>)
 
 Enable the MCS and MCG controllers for the fleet.
 
@@ -162,7 +162,7 @@ Enable the MCS and MCG controllers for the fleet.
     gcloud container fleet multi-cluster-services describe --project=[PROJECT_ID]
     ```
 
-![Task 4: Enable Multi-cluster Gateways (MCG) Controller](Task 4. Enable multi-cluster Gateways (MCG) controller.png)
+![Task 4: Enable Multi-cluster Gateways (MCG) Controller](<./Task 4. Enable multi-cluster Gateways (MCG) controller.png>)
 
 2.  **Enable Multi-cluster Gateway (MCG) Controller:**
 
@@ -327,7 +327,7 @@ Deploy a sample application and its services to the workload clusters (`cluster2
 
 ---
 
-![Task 6: Deploy the Gateway and HttpRoute](Task 6. Deploy the Gateway and HttpRoute.png)
+![Task 6: Deploy the Gateway and HttpRoute](<./Task 6. Deploy the Gateway and HttpRoute.png>)
 
 Define the ingress behavior on the config cluster (`cluster1`).
 
